@@ -1,1 +1,63 @@
-<p>cinepolis works!</p>
+<html>
+
+<body>
+  <div class="main-container">
+    <div class="header-logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Cin%C3%A9polis_logo.svg/1200px-Cin%C3%A9polis_logo.svg.png" alt="Logo Cinépolis">
+    </div>
+
+    <form id="entradas-form">
+      <div class="form-group pt-4">
+        <h3>Entradas</h3>
+        <label for="nombre">Nombre </label>
+        <input type="text" id="nombre" class="form-control" [(ngModel)]="nombre" name="nombre">
+        <br>
+        <label for="cantC">Cantidad compradoes </label>
+        <input type="number" id="cantC" class="form-control" [(ngModel)]="cantC" name="cantC">
+        <br>
+        <label for="tarjetaCineco">Tarjeta Cieneco </label>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="tarjetaSi" name="tarjetaCineco" [(ngModel)]="tarjetaC"
+            value="Si">
+          <label class="form-check-label" for="tarjetaSi">Sí</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="tarjetaNo" name="tarjetaCineco" [(ngModel)]="tarjetaC"
+            value="No">
+          <label class="form-check-label" for="tarjetaNo">No</label>
+        </div>
+        <br>
+        <label for="cantB">Cantidad de boletos</label>
+        <input type="number" id="cantB" class="form-control" [(ngModel)]="cantB" name="cantB">
+        <br>
+      </div>
+    </form>
+
+    <form id="salidas-form">
+      <h3>Salidas</h3>
+      <div class="form-group pt-4">
+        <label for="resultado">Valor a pagar: </label>
+        <div class="col-6">
+          <h1>{{res}}</h1>
+        </div>
+      </div>
+    </form>
+
+    <div class="cinepolis-text">
+      <h2>Cinépolis</h2>
+      <p>LA CAPITAL DEL CINE</p>
+    </div>
+
+    <form id="acciones-form">
+      <div class="form-group pt-4">
+        <div class="form-group">
+          <h3>Acciones</h3>
+          <button type="button" class="btn btn-primary me-2" (click)="Proceso()">Procesar</button>
+          <button type="button" class="btn btn-primary mt-3"> Salir </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

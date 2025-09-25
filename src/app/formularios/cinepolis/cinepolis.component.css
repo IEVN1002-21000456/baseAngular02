@@ -1,0 +1,184 @@
+
+body {
+    background-color: #0c5d8c;
+    font-family: Arial, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+.main-container {
+    width: 800px;
+    background-color: #0c5d8c;
+    border: 5px solid #d8d8d8;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "entradas salidas"
+        "logo acciones";
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+
+}
+.header-logo {
+    grid-area: header;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #d8d8d8;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+.header-logo img {
+    max-width: 250px;
+    height: auto;
+    display: block;
+}
+
+.main-container h1 {
+    grid-area: header;
+    text-align: center;
+    color: white;
+    font-size: 2.5em;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #d8d8d8;
+    margin-bottom: 20px;
+    font-weight: bold;
+
+
+}
+
+
+h3 {
+    font-size: 1.5em;
+    color: white;
+    border-left: 5px solid #F7A209;
+    padding-left: 10px;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+
+form {
+    border: 1px solid #d8d8d8;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+
+#entradas-form {
+    grid-area: entradas;
+}
+
+#salidas-form {
+    grid-area: salidas;
+}
+
+#acciones-form {
+    grid-area: acciones;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    border: 1px solid #d8d8d8;
+    padding: 20px;
+}
+
+
+.form-group label {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 3px;
+    background-color: white;
+    color: #000;
+}
+
+
+.form-check {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.form-check-input {
+    margin-right: 5px;
+}
+
+
+#salidas-form h1 {
+    font-size: 1.5em;
+    color: #F7A209;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 1px solid white;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+}
+
+.btn-primary {
+    background-color: #F7A209;
+    color: #000;
+}
+
+.btn-primary:hover {
+    background-color: #ffb740;
+}
+
+.btn.mt-3 {
+    background-color: #d8d8d8;
+    color: #000;
+}
+
+.btn.mt-3:hover {
+    background-color: #b0b0b0;
+}
+
+
+.cinepolis-text {
+    grid-area: logo;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.cinepolis-text h2 {
+    font-size: 4em;
+    color: white;
+    line-height: 0.8;
+    margin: 0;
+    font-weight: 900;
+}
+
+.cinepolis-text p {
+    font-size: 1.2em;
+    color: white;
+    margin-top: 5px;
+    letter-spacing: 2px;
+}
