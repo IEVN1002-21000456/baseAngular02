@@ -1,0 +1,99 @@
+/* resistencias.component.css */
+
+.calculadora-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.bandas-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.banda-selector {
+  width: 23%;
+  min-width: 250px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.banda-selector h2 {
+  font-size: 1.1em;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.banda-selector label {
+  display: block;
+  padding: 5px;
+  margin: 5px 0;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.1s;
+  font-weight: bold;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.banda-selector label:hover {
+  filter: brightness(1.1);
+}
+
+.banda-selector input[type="radio"] {
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px 30px;
+  font-size: 1.2em;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Tabla de Resultados */
+.tabla-resultados {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.tabla-resultados h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+thead th {
+  background-color: #f2f2f2;
+}

@@ -1,0 +1,103 @@
+<div class="calculadora-container">
+  <h1>Calculadora de Resistencia por Código de Colores</h1>
+
+  <div class="bandas-container">
+    <div class="banda-selector">
+      <h2>1ra. Banda (Dígito)</h2>
+      <div *ngFor="let color of calculadora.coloresBanda1y2">
+        <label [style.color]="color.cssColor === '#000000' ? '#FFFFFF' : '#000000'" [style.backgroundColor]="color.cssColor">
+          <input type="radio"
+                 name="banda1"
+                 [value]="color"
+                 [(ngModel)]="calculadora.seleccionBanda1">
+          {{ color.nombre }} ({{ color.valor }})
+        </label>
+      </div>
+    </div>
+
+    <div class="banda-selector">
+      <h2>2da. Banda (Dígito)</h2>
+      <div *ngFor="let color of calculadora.coloresBanda1y2">
+        <label [style.color]="color.cssColor === '#000000' ? '#FFFFFF' : '#000000'"
+               [style.backgroundColor]="color.cssColor">
+          <input type="radio"
+                 name="banda2"
+                 [value]="color"
+                 [(ngModel)]="calculadora.seleccionBanda2">
+          {{ color.nombre }} ({{ color.valor }})
+        </label>
+      </div>
+    </div>
+
+    <div class="banda-selector">
+      <h2>3ra. Banda (Multiplicador)</h2>
+      <div *ngFor="let color of calculadora.coloresMultiplicador">
+        <label [style.color]="color.cssColor === '#000000' ? '#FFFFFF' : '#000000'"
+               [style.backgroundColor]="color.cssColor">
+          <input type="radio"
+                 name="multiplicador"
+                 [value]="color"
+                 [(ngModel)]="calculadora.seleccionMultiplicador">
+           {{ color.nombre }} (x 10^{{ color.valor }})
+        </label>
+      </div>
+    </div>
+
+    <div class="banda-selector">
+      <h2>Banda de Tolerancia</h2>
+      <div *ngFor="let color of calculadora.coloresTolerancia">
+        <label [style.color]="color.cssColor === '#000000' || color.cssColor === '#964B00' ? '#FFFFFF' : '#000000'"
+               [style.backgroundColor]="color.cssColor">
+          <input type="radio"
+                 name="tolerancia"
+                 [value]="color"
+                 [(ngModel)]="calculadora.seleccionTolerancia">
+          {{ color.nombre }} (±{{ color.valor }}%)
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <button (click)="calculadora.procesarCalculo()">Calcular</button>
+
+  <div *ngIf="calculadora.resultadosVisibles" class="tabla-resultados">
+    <h2>Resultados del Cálculo</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Color 1</th>
+          <th>Color 2</th>
+          <th>Multiplicador</th>
+          <th>Tolerancia</th>
+          <th>Valor Nominal</th>
+          <th>Valor Máximo</th>
+          <th>Valor Mínimo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td [style.backgroundColor]="calculadora.seleccionBanda1.cssColor"
+              [style.color]="calculadora.seleccionBanda1.cssColor === '#000000' ? '#FFFFFF' : '#000000'">
+            {{ calculadora.seleccionBanda1.nombre }}
+          </td>
+          <td [style.backgroundColor]="calculadora.seleccionBanda2.cssColor"
+              [style.color]="calculadora.seleccionBanda2.cssColor === '#000000' ? '#FFFFFF' : '#000000'">
+            {{ calculadora.seleccionBanda2.nombre }}
+          </td>
+          <td [style.backgroundColor]="calculadora.seleccionMultiplicador.cssColor"
+              [style.color]="calculadora.seleccionMultiplicador.cssColor === '#000000' ? '#FFFFFF' : '#000000'">
+            {{ calculadora.seleccionMultiplicador.nombre }}
+          </td>
+          <td [style.backgroundColor]="calculadora.seleccionTolerancia.cssColor"
+              [style.color]="calculadora.seleccionTolerancia.cssColor === 'transparent' ? '#000000' : (calculadora.seleccionTolerancia.cssColor === '#FFD700' || calculadora.seleccionTolerancia.cssColor === '#C0C0C0' ? '#000000' : '#FFFFFF')">
+            ±{{ calculadora.seleccionTolerancia.valor }}%
+          </td>
+
+          <td>{{ calculadora.getValorFormateado(calculadora.getValor()) }}</td>
+          <td>{{ calculadora.getValorFormateado(calculadora.getValorMaximo()) }}</td>
+          <td>{{ calculadora.getValorFormateado(calculadora.getValorMinimo()) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
